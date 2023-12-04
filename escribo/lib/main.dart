@@ -83,28 +83,30 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Digite um número inteiro:',
-              style: TextStyle(fontSize: 20),
-            ),
-            TextField(
-              controller: _textFieldController,
-              keyboardType: TextInputType.number,
-              inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly,
-              ],
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 40),
-              onChanged: (value) {},
-            ),
-            SizedBox(height: 20),
-            Text('Números somados: $_numerosSomados'),
-            SizedBox(height: 20),
-            Text('Resultado: $_resultado', style: TextStyle(fontSize: 20)),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'Digite um número inteiro:',
+                style: TextStyle(fontSize: 20),
+              ),
+              TextField(
+                controller: _textFieldController,
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                ],
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 40),
+                onChanged: (value) {},
+              ),
+              SizedBox(height: 20),
+              Text('Números somados: $_numerosSomados'),
+              SizedBox(height: 20),
+              Text('Resultado: $_resultado', style: TextStyle(fontSize: 20)),
+            ],
+          ),
         ),
       ),
     );
